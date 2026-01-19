@@ -1,0 +1,221 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Feedback Analytics Platform</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; color: #111; line-height: 1.65; }
+    h1, h2, h3 { margin-top: 32px; }
+    .meta { color: #444; font-size: 14px; margin-bottom: 20px; }
+    .box { border-left: 3px solid #000; padding-left: 16px; margin: 20px 0; }
+    ul { margin-left: 20px; }
+    pre { background: #f7f7f7; padding: 12px; }
+  </style>
+</head>
+<body>
+
+<h1>Customer Feedback Analytics Platform</h1>
+<p class="meta">
+<strong>Role:</strong> Product Manager  
+<br><strong>Domain:</strong> Customer Experience / Analytics
+</p>
+
+<!-- ================= CONTEXT ================= -->
+
+<h2>1. Context & Background</h2>
+<p>
+Banks receive customer feedback through multiple channels:
+support tickets, surveys, emails, app reviews, and branch complaints.
+</p>
+<p>
+This data was fragmented, manually analyzed, and rarely used
+for proactive product decisions.
+</p>
+
+<!-- ================= PROBLEM ================= -->
+
+<h2>2. Problem Statement</h2>
+<ul>
+  <li>Feedback analysis was reactive and delayed</li>
+  <li>No single view of customer sentiment</li>
+  <li>Product teams relied on anecdotes, not data</li>
+  <li>High-effort manual tagging</li>
+</ul>
+
+<div class="box">
+<strong>Core PM Question:</strong>  
+How can we convert raw customer feedback into actionable insights
+for product and operations teams?
+</div>
+
+<!-- ================= USERS ================= -->
+
+<h2>3. Users & Stakeholders</h2>
+<ul>
+  <li><strong>Primary:</strong> Product managers</li>
+  <li><strong>Secondary:</strong> CX and operations teams</li>
+  <li><strong>Stakeholders:</strong> Leadership, Compliance</li>
+</ul>
+
+<!-- ================= GOALS ================= -->
+
+<h2>4. Goals & Success Metrics</h2>
+
+<div class="box">
+<strong>North Star Metric:</strong> Actioned Insights per Month
+</div>
+
+<h3>Supporting Metrics</h3>
+<ul>
+  <li>Feedback processing time</li>
+  <li>Insight-to-action conversion rate</li>
+  <li>Repeat issue reduction</li>
+</ul>
+
+<h3>Guardrail Metrics</h3>
+<ul>
+  <li>False-positive insights</li>
+  <li>Model explainability</li>
+</ul>
+
+<!-- ================= DISCOVERY ================= -->
+
+<h2>5. Discovery & Key Insights</h2>
+<ul>
+  <li>Most feedback clusters around a small set of recurring issues</li>
+  <li>PMs wanted trends, not individual complaints</li>
+  <li>Explainability was critical for trust in AI-generated insights</li>
+</ul>
+
+<div class="box">
+<strong>Insight that shaped the product:</strong>  
+Summarization and clustering mattered more than sentiment scores alone.
+</div>
+
+<!-- ================= SOLUTION ================= -->
+
+<h2>6. Solution Design</h2>
+
+<p>
+Designed an <strong>AI-assisted analytics platform</strong> that
+clusters feedback, summarizes themes, and highlights trends.
+</p>
+
+<pre>
+Feedback Sources
+   ↓
+Data Normalization
+   ↓
+AI Clustering & Summarization
+   ↓
+Insights Dashboard
+   ↓
+Product Decisions
+</pre>
+
+<h3>Key Capabilities</h3>
+<ul>
+  <li>Automated topic clustering</li>
+  <li>Explainable summaries</li>
+  <li>Trend detection over time</li>
+  <li>Insight export for PRDs</li>
+</ul>
+
+<!-- ================= PRD ================= -->
+
+<h2>7. Product Requirements (PRD – Summary)</h2>
+
+<h3>Objective</h3>
+<p>
+Enable PMs to make data-backed decisions using customer feedback at scale.
+</p>
+
+<h3>In Scope</h3>
+<ul>
+  <li>Text-based feedback sources</li>
+  <li>AI-based clustering and summarization</li>
+  <li>Insight dashboards</li>
+</ul>
+
+<h3>Out of Scope</h3>
+<ul>
+  <li>Voice sentiment analysis</li>
+  <li>Automated decision-making</li>
+</ul>
+
+<h3>Non-Functional Requirements</h3>
+<ul>
+  <li>Explainability</li>
+  <li>Data privacy</li>
+  <li>Scalability</li>
+</ul>
+
+<!-- ================= ROADMAP ================= -->
+
+<h2>8. MVP Scope & Roadmap</h2>
+
+<h3>Phase 1 (MVP)</h3>
+<ul>
+  <li>Survey + ticket ingestion</li>
+  <li>Basic clustering</li>
+</ul>
+
+<h3>Phase 2</h3>
+<ul>
+  <li>Trend detection</li>
+  <li>PRD export</li>
+</ul>
+
+<h3>Explicit Non-Goals</h3>
+<ul>
+  <li>Fully autonomous insights</li>
+  <li>Customer-facing dashboards</li>
+</ul>
+
+<!-- ================= ANALYTICS ================= -->
+
+<h2>9. Analytics & Measurement</h2>
+
+<h3>Tracked Events</h3>
+<ul>
+  <li>Feedback ingested</li>
+  <li>Cluster created</li>
+  <li>Insight reviewed</li>
+  <li>Action taken</li>
+</ul>
+
+<h3>Decision Triggers</h3>
+<ul>
+  <li>Low action rate → Improve summaries</li>
+  <li>High false positives → Adjust models</li>
+</ul>
+
+<!-- ================= OUTCOME ================= -->
+
+<h2>10. Outcome & Learnings</h2>
+<ul>
+  <li>Faster identification of systemic issues</li>
+  <li>More objective product prioritization</li>
+  <li>Reduced reactive firefighting</li>
+</ul>
+
+<h2>11. Key Learnings</h2>
+<ul>
+  <li>AI is most valuable when augmenting PM judgment</li>
+  <li>Explainability drives adoption</li>
+</ul>
+
+<h2>Artifacts </h2>
+<ul>
+  <li>
+    <a href="https://github.com/Santhosh-Sridhar1509/customer-feedback-analytics" target="_blank">
+      GitHub – PRD, Metrics, AI Flow Diagrams
+    </a>
+  </li>
+</ul>
+
+<p><a href="index.html">← Back to Portfolio</a></p>
+
+</body>
+</html>
+
