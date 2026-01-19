@@ -1,1 +1,225 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Core Banking Account Lifecycle Optimization</title></head><body><h1>Core Banking Account Lifecycle Optimization</h1><p><strong>Role:</strong> Product Manager</p><p><strong>Problem:</strong> Fragmented lifecycle states caused operational inefficiencies and audit issues.</p><p><strong>Users:</strong> Operations teams, Compliance teams</p><p><strong>Solution:</strong> Standardized lifecycle states and automated transitions aligned with regulatory requirements.</p><p><strong>Metrics:</strong> STP rate, manual interventions, audit findings</p><p><strong>Outcome:</strong> Improved straight-through processing and reduced operational risk.</p></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Core Banking Account Lifecycle Optimization</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; color: #111; line-height: 1.65; }
+    h1, h2, h3 { margin-top: 32px; }
+    .meta { color: #444; font-size: 14px; margin-bottom: 20px; }
+    .box { border-left: 3px solid #000; padding-left: 16px; margin: 20px 0; }
+    ul { margin-left: 20px; }
+    pre { background: #f7f7f7; padding: 12px; }
+  </style>
+</head>
+<body>
+
+<h1>Core Banking Account Lifecycle Optimization</h1>
+<p class="meta">
+<strong>Role:</strong> Product Manager  
+<br><strong>Domain:</strong> Core Banking / Retail Deposits
+</p>
+
+<!-- ================= CONTEXT ================= -->
+
+<h2>1. Context & Background</h2>
+<p>
+In many mid-size banks, customer account lifecycle management
+(opening, maintenance, dormancy, and closure)
+is supported by legacy core banking systems such as Temenos T24.
+</p>
+<p>
+While these systems are functionally rich, customer experience
+and operational efficiency often suffer due to fragmented workflows,
+manual interventions, and inconsistent handling across channels.
+</p>
+
+<!-- ================= PROBLEM ================= -->
+
+<h2>2. Problem Statement</h2>
+<ul>
+  <li>Account opening took <strong>2–3 working days</strong></li>
+  <li>High dependency on branch-level manual verification</li>
+  <li>Dormant and inactive accounts created compliance risk</li>
+  <li>Customer requests (updates, closure) lacked transparency</li>
+</ul>
+
+<div class="box">
+<strong>Core PM Question:</strong>  
+How can we streamline the full account lifecycle while respecting
+core banking constraints and regulatory requirements?
+</div>
+
+<!-- ================= USERS ================= -->
+
+<h2>3. Users & Stakeholders</h2>
+<ul>
+  <li><strong>Primary:</strong> Retail banking customers</li>
+  <li><strong>Secondary:</strong> Branch operations staff</li>
+  <li><strong>Stakeholders:</strong> Compliance, IT, Audit teams</li>
+</ul>
+
+<!-- ================= GOALS ================= -->
+
+<h2>4. Goals & Success Metrics</h2>
+
+<div class="box">
+<strong>North Star Metric:</strong> Account Activation Time
+</div>
+
+<h3>Supporting Metrics</h3>
+<ul>
+  <li>First successful transaction rate</li>
+  <li>Account opening completion rate</li>
+  <li>Customer service tickets per account</li>
+</ul>
+
+<h3>Guardrail Metrics</h3>
+<ul>
+  <li>KYC exceptions</li>
+  <li>Audit observations</li>
+  <li>Dormant account growth</li>
+</ul>
+
+<!-- ================= DISCOVERY ================= -->
+
+<h2>5. Discovery & Key Insights</h2>
+<ul>
+  <li>Customers cared more about <strong>predictability</strong> than speed alone</li>
+  <li>Operations teams lacked a unified view of account status</li>
+  <li>Compliance teams required traceability at every stage</li>
+</ul>
+
+<div class="box">
+<strong>Insight that shaped the product:</strong>  
+Lifecycle visibility was more valuable than adding new features.
+</div>
+
+<!-- ================= SOLUTION ================= -->
+
+<h2>6. Solution Design</h2>
+
+<p>
+Designed an <strong>Account Lifecycle Orchestration Layer</strong>
+on top of the core banking system.
+</p>
+
+<pre>
+Customer Request
+   ↓
+Lifecycle Status Engine
+   ↓
+Validation (KYC / Rules)
+   ↓
+Core Banking (T24)
+   ↓
+Notifications & Audit Logs
+</pre>
+
+<h3>Key Capabilities</h3>
+<ul>
+  <li>Unified lifecycle status tracking</li>
+  <li>Rule-driven validations</li>
+  <li>Event-based notifications</li>
+  <li>Audit-ready logs</li>
+</ul>
+
+<!-- ================= PRD ================= -->
+
+<h2>7. Product Requirements (PRD – Summary)</h2>
+
+<h3>Objective</h3>
+<p>
+Reduce account activation time while ensuring compliance
+and operational consistency.
+</p>
+
+<h3>In Scope</h3>
+<ul>
+  <li>Savings & current accounts</li>
+  <li>KYC status tracking</li>
+  <li>Dormancy and reactivation flows</li>
+  <li>Customer-initiated updates</li>
+</ul>
+
+<h3>Out of Scope</h3>
+<ul>
+  <li>Replacement of core banking system</li>
+  <li>Credit products</li>
+</ul>
+
+<h3>Non-Functional Requirements</h3>
+<ul>
+  <li>Reliability</li>
+  <li>Auditability</li>
+  <li>Backward compatibility</li>
+</ul>
+
+<!-- ================= ROADMAP ================= -->
+
+<h2>8. MVP Scope & Roadmap</h2>
+
+<h3>Phase 1 (MVP)</h3>
+<ul>
+  <li>Account opening visibility</li>
+  <li>Lifecycle status dashboard</li>
+</ul>
+
+<h3>Phase 2</h3>
+<ul>
+  <li>Dormancy alerts</li>
+  <li>Self-service account updates</li>
+</ul>
+
+<h3>Explicit Non-Goals</h3>
+<ul>
+  <li>Real-time core replacement</li>
+  <li>Cross-product consolidation</li>
+</ul>
+
+<!-- ================= ANALYTICS ================= -->
+
+<h2>9. Analytics & Measurement</h2>
+
+<h3>Tracked Events</h3>
+<ul>
+  <li>Account created</li>
+  <li>KYC completed</li>
+  <li>Account activated</li>
+  <li>Account dormant</li>
+</ul>
+
+<h3>Decision Triggers</h3>
+<ul>
+  <li>Activation &gt; 48 hrs → Process review</li>
+  <li>Dormant growth → Customer nudges</li>
+</ul>
+
+<!-- ================= OUTCOME ================= -->
+
+<h2>10. Outcome & Learnings</h2>
+<ul>
+  <li>Faster and more predictable account activation</li>
+  <li>Reduced operational escalations</li>
+  <li>Improved audit readiness</li>
+</ul>
+
+<h2>11. Key Learnings</h2>
+<ul>
+  <li>Visibility beats raw speed in regulated products</li>
+  <li>Lifecycle thinking prevents downstream issues</li>
+</ul>
+
+<h2>Artifacts (Optional)</h2>
+<ul>
+  <li>
+    <a href="https://github.com/YOUR_GITHUB_USERNAME/core-banking-account-lifecycle" target="_blank">
+      GitHub – PRD, Metrics, Lifecycle Diagrams
+    </a>
+  </li>
+</ul>
+
+<p><a href="index.html">← Back to Portfolio</a></p>
+
+</body>
+</html>
