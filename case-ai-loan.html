@@ -1,8 +1,230 @@
-<h2>Artifacts</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AI-Assisted Loan Approval Platform</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; color: #111; line-height: 1.65; }
+    h1, h2, h3 { margin-top: 32px; }
+    .meta { color: #444; font-size: 14px; margin-bottom: 20px; }
+    .box { border-left: 3px solid #000; padding-left: 16px; margin: 20px 0; }
+    ul { margin-left: 20px; }
+    pre { background: #f7f7f7; padding: 12px; }
+  </style>
+</head>
+<body>
+
+<h1>AI-Assisted Loan Approval Platform</h1>
+<p class="meta">
+<strong>Role:</strong> Product Manager  
+<br><strong>Domain:</strong> Retail Banking (Mid-size Bank)
+</p>
+
+<!-- ================= CONTEXT ================= -->
+
+<h2>1. Context & Background</h2>
+<p>
+Mid-size retail banks compete heavily on loan approval speed, especially for personal and MSME loans.
+However, regulatory requirements, legacy core banking systems, and risk controls make full automation impractical.
+</p>
+<p>
+At this bank, loan approvals relied on semi-manual processes that created delays, operational overhead,
+and inconsistent customer experiences across branches.
+</p>
+
+<!-- ================= PROBLEM ================= -->
+
+<h2>2. Problem Statement</h2>
+<ul>
+  <li>Loan approval turnaround time (TAT): <strong>3–5 working days</strong></li>
+  <li>High manual effort for low-risk applications</li>
+  <li>Inconsistent approval decisions across branches</li>
+  <li>Poor transparency for customers during the approval journey</li>
+</ul>
+
+<div class="box">
+<strong>Core PM Question:</strong>  
+How can we significantly reduce approval time without increasing credit risk or violating regulatory expectations?
+</div>
+
+<!-- ================= USERS ================= -->
+
+<h2>3. Users & Stakeholders</h2>
+<ul>
+  <li><strong>Primary:</strong> Retail banking customers</li>
+  <li><strong>Secondary:</strong> Credit officers</li>
+  <li><strong>Stakeholders:</strong> Risk, Compliance, Operations teams</li>
+</ul>
+
+<!-- ================= GOALS ================= -->
+
+<h2>4. Goals & Success Metrics</h2>
+
+<div class="box">
+<strong>North Star Metric:</strong> Loan Approval Turnaround Time (TAT)
+</div>
+
+<h3>Supporting Metrics</h3>
+<ul>
+  <li>Straight-through processing (STP) rate</li>
+  <li>Approval consistency across branches</li>
+  <li>Customer drop-off rate</li>
+</ul>
+
+<h3>Guardrail Metrics</h3>
+<ul>
+  <li>Default rate (30 / 60 / 90 DPD)</li>
+  <li>Manual override frequency</li>
+  <li>Audit observations</li>
+</ul>
+
+<!-- ================= DISCOVERY ================= -->
+
+<h2>5. Discovery & Key Insights</h2>
+<ul>
+  <li>~80% of applications followed predictable, low-risk patterns</li>
+  <li>Credit officers wanted <strong>decision support</strong>, not automation</li>
+  <li>Risk teams rejected black-box AI models</li>
+  <li>Explainability was more important than model accuracy</li>
+</ul>
+
+<div class="box">
+<strong>Insight that shaped the product:</strong>  
+Trust and explainability would drive adoption more than automation.
+</div>
+
+<!-- ================= SOLUTION ================= -->
+
+<h2>6. Solution Design</h2>
+
+<p>
+Designed a <strong>hybrid decisioning platform</strong> that combines rules, AI assistance, and human oversight.
+</p>
+
+<pre>
+Customer Application
+   ↓
+Rule-Based Eligibility Checks
+   ↓
+AI Risk Score (Explainable)
+   ↓
+Credit Officer Review (if required)
+   ↓
+Core Banking System (T24)
+</pre>
+
+<h3>Why this approach?</h3>
+<ul>
+  <li>Meets regulatory expectations</li>
+  <li>Builds trust with credit officers</li>
+  <li>Reduces manual effort on low-risk cases</li>
+</ul>
+
+<!-- ================= PRD ================= -->
+
+<h2>7. Product Requirements (PRD – Summary)</h2>
+
+<h3>Objective</h3>
+<p>
+Reduce loan approval turnaround time by <strong>30–40%</strong> without increasing credit risk.
+</p>
+
+<h3>In Scope</h3>
+<ul>
+  <li>Personal loans</li>
+  <li>Configurable eligibility rules</li>
+  <li>AI-assisted risk scoring (recommendation only)</li>
+  <li>Manual override with audit trail</li>
+</ul>
+
+<h3>Out of Scope</h3>
+<ul>
+  <li>Fully automated approvals</li>
+  <li>Black-box ML models</li>
+</ul>
+
+<h3>Non-Functional Requirements</h3>
+<ul>
+  <li>Explainability</li>
+  <li>Auditability</li>
+  <li>High availability</li>
+</ul>
+
+<!-- ================= ROADMAP ================= -->
+
+<h2>8. MVP Scope & Roadmap</h2>
+
+<h3>Phase 1 (MVP)</h3>
+<ul>
+  <li>Personal loans only</li>
+  <li>Rule-based eligibility</li>
+  <li>AI score as read-only recommendation</li>
+</ul>
+
+<h3>Phase 2</h3>
+<ul>
+  <li>MSME loans</li>
+  <li>Configurable risk thresholds</li>
+  <li>Branch-level analytics</li>
+</ul>
+
+<h3>Explicit Non-Goals</h3>
+<ul>
+  <li>Real-time bureau integrations</li>
+  <li>Automated rejections</li>
+</ul>
+
+<!-- ================= ANALYTICS ================= -->
+
+<h2>9. Analytics & Measurement</h2>
+
+<h3>Event Tracking</h3>
+<ul>
+  <li>Application submitted</li>
+  <li>Eligibility passed / failed</li>
+  <li>AI score generated</li>
+  <li>Override applied</li>
+  <li>Approval / rejection completed</li>
+</ul>
+
+<h3>Decision Triggers</h3>
+<ul>
+  <li>Override rate &gt; 25% → Review rules</li>
+  <li>Default rate increase → Tighten thresholds</li>
+  <li>Drop-offs increase → Simplify journey</li>
+</ul>
+
+<!-- ================= OUTCOME ================= -->
+
+<h2>10. Outcome & Learnings</h2>
+<ul>
+  <li>Projected <strong>30–40%</strong> reduction in approval TAT</li>
+  <li>~20% reduction in manual processing effort</li>
+  <li>No increase in default rates</li>
+  <li>Explainability significantly improved adoption</li>
+</ul>
+
+<h2>11. Key Learnings</h2>
+<ul>
+  <li>In regulated fintech, trust beats sophistication</li>
+  <li>Metrics alignment before launch is critical</li>
+  <li>Human-in-the-loop accelerates adoption</li>
+</ul>
+
+<h2>Artifacts (Optional)</h2>
+<p>
+Representative PM artifacts are available for deeper review:
+</p>
 <ul>
   <li>
     <a href="https://github.com/Santhosh-Sridhar1509/ai-loan-approval-platform" target="_blank">
-      GitHub Repository – PRD, Metrics & Roadmap
+      GitHub – PRD, Metrics, Roadmap & Diagrams
     </a>
   </li>
 </ul>
+
+<p><a href="index.html">← Back to Portfolio</a></p>
+
+</body>
+</html>
+
